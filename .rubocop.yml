@@ -1,0 +1,110 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - .bundle/**/*
+    - bin/**/*
+    - vendor/**/*
+    - tmp/**/*
+    - log/**/*
+    - spec/support/**/*
+    - spec/factories/**/*
+    - spec/fixtures/**/*
+    - spec/pb/**/*
+    - spec/demo_server
+require:
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-thread_safety
+
+Layout/EndAlignment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 147
+
+Metrics/ClassLength:
+  Max: 406
+
+Metrics/CyclomaticComplexity:
+  Max: 12
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 88
+
+Metrics/ModuleLength:
+  Max: 1000
+
+Metrics/ParameterLists:
+  Max: 9
+  MaxOptionalParameters: 5
+
+Metrics/PerceivedComplexity:
+  Max: 12
+
+Naming/PredicateName:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+# Rubocop is opinionated here, which makes compositional base classes/interfaces with keyword arguments problematic.
+# Disabling this allows base class stub methods to have keyword args.
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: true
+
+# This cop also affects hash keys, which is bad as we can't always control that. Disabling.
+Naming/VariableNumber:
+  Enabled: false
+
+# We're fine with this
+ThreadSafety/NewThread:
+  Enabled: false
+
+# Not necessary
+Layout/EmptyLineBetweenDefs:
+  Enabled: false
+
+####################################################################################################
+# RSpec Configurations
+####################################################################################################
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MultipleExpectations:
+  Max: 30
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 50
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/StubbedMock:
+  Enabled: false
+
+# This does not work with RPC messages
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/gruf/functional/**/*
+
+RSpec/IteratedExpectation:
+  Exclude:
+    - spec/gruf/functional/**/*
