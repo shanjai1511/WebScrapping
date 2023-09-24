@@ -22,4 +22,4 @@ jobs:
       - name: Run tests
         run: bundle exec rake
       - name: execute ruby file
-        run:  ruby Main.rb
+        run:  ruby /workspaces/BUilandtestruby/bin/Main.rb
