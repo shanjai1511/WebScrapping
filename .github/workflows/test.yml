@@ -22,5 +22,8 @@ jobs:
       
       - name: Install nokogiri
         run: gem install nokogiri
+
+      -name: Install spreadsheet
+        run: gem install spreadsheet
       - name: Execute Main.rb
         run: ruby bin/Main.rb
