@@ -19,7 +19,8 @@ jobs:
           ruby-version: '3.1'
       - name: Install dependencies
         run: bundle install
-              gem install nokogiri
-
+      
+      - name: Install nokogiri
+        run: gem install nokogiri
       - name: Execute Main.rb
         run: ruby bin/Main.rb
